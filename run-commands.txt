@@ -1,0 +1,4 @@
+docker build --tag oaasgaa01/caddy-revproxy:latest .
+docker-compose up -d
+docker run --rm -d --name caddy-revproxy -p 2015:2015 oaasgaa01/caddy-revproxy
+docker logs -f caddy-revproxy
