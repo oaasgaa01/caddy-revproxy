@@ -1,9 +1,3 @@
-
-aasgaards.no
-
-
-root * /usr/share/caddy
-
-file_server
+172.16.1.30
 
 reverse_proxy 172.16.1.30:9000
