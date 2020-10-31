@@ -1,4 +1,4 @@
 
     localhost
 
-    reverse_proxy 172.16.1.30:16102
+    reverse_proxy 172.16.1.30:9000
