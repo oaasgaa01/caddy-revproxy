@@ -7,13 +7,10 @@ services:
     restart: unless-stopped
     ports:
       - "2015:2015"
-      - "2016:80"
-      - "2017:443"
-    # volumes:
-    #   - caddy_config:/etc/caddy
-#      - $PWD/site:/srv
-#      - caddy_data:/data
-#      - caddy_config:/config
-
+      - "80:80"
+      - "443:443"
+    volumes:
+      - revproxy_data:/data
+      - revproxy_config:/config
 # volumes:
 #   caddy_config:
