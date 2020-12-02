@@ -19,12 +19,29 @@ aasgaards.no
 # Another common task is to set up a reverse proxy:
 # reverse_proxy localhost:8080
 
+route /recipes* {
+    uri strip_prefix /recipes
+    reverse_proxy   192.168.1.111:6101 192.168.1.111:6102  {
+        lb_policy   round_robin
+    }
+}
+
+
+#route /recipes* {
+#    uri strip_prefix /recipes
+#    reverse_proxy   192.168.1.50:16104 192.168.1.60:16104  {
+#        lb_policy   round_robin
+#    }
+#}
+
 route /caddy* {
         uri strip_prefix /caddy
         reverse_proxy 192.168.1.50:16102
 }
 
-reverse_proxy http://192.168.1.50:16104 http://192.168.1.60:16104
+reverse_proxy / http://192.168.1.50:16104 http://192.168.1.60:16104 {
+        # lb_policy       round_robin
+}
 
 
 
