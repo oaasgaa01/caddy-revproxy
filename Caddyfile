@@ -30,7 +30,7 @@ aasgaards.no
 route /recipes* {
     uri strip_prefix /recipes
     reverse_proxy   192.168.1.50:16104 192.168.1.60:16104  {
-        lb_policy   round_robin
+#        lb_policy   round_robin
     }
 }
 
