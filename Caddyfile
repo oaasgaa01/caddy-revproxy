@@ -21,10 +21,10 @@ aasgaards.no
 
 route /caddy* {
         uri strip_prefix /caddy
-        reverse_proxy 192.168.1.50:16102
+        reverse_proxy 192.168.1.52:16102
 }
 
-reverse_proxy http://192.168.1.50:16104 http://192.168.1.60:16104
+reverse_proxy http://192.168.1.50:16104 http://192.168.1.52:16104 http://192.168.1.53:16104
 
 
 
