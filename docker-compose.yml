@@ -12,5 +12,6 @@ services:
     volumes:
       - revproxy_data:/data
       - revproxy_config:/config
-# volumes:
-#   caddy_config:
+volumes:
+  revproxy_data:
+  revproxy_config:
