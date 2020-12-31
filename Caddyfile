@@ -21,7 +21,7 @@ aasgaards.no
 
 route /emby* {
 #    uri strip_prefix /emby
-    reverse_proxy   192.168.1.52:16105  {
+    reverse_proxy   192.168.1.50:16105  {
 #    reverse_proxy   192.168.1.50:8096  {
 #        lb_policy   round_robin
     }
@@ -36,7 +36,7 @@ route /recipes* {
 
 route /caddy* {
         uri strip_prefix /caddy
-        reverse_proxy 192.168.1.52:16102
+        reverse_proxy 192.168.1.50:16102 192.168.1.52:16102 192.168.1.53:16102
 }
 
 # Or serve a PHP site through php-fpm:
