@@ -27,7 +27,6 @@ route /emby* {
     }
 }
 
-
 route /recipes* {
     uri strip_prefix /recipes
     reverse_proxy   192.168.1.50:16104 192.168.1.52:16104 192.168.1.53:16104 {
@@ -39,16 +38,6 @@ route /caddy* {
         uri strip_prefix /caddy
         reverse_proxy 192.168.1.52:16102
 }
-
-<<<<<<< HEAD
-reverse_proxy http://192.168.1.50:16104 http://192.168.1.52:16104 http://192.168.1.53:16104
-=======
-reverse_proxy / http://192.168.1.50:16104 http://192.168.1.60:16104 {
-        # lb_policy       round_robin
-}
->>>>>>> 676c95a2531c8a85bd2345efe6b640e14c4e0267
-
-
 
 # Or serve a PHP site through php-fpm:
 # php_fastcgi localhost:9000
