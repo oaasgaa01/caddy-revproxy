@@ -24,11 +24,9 @@ route /test* {
     reverse_proxy   192.168.1.50:8096
 }
 
+# Emby media server
 route /emby* {
-#    uri strip_prefix /emby
-#    reverse_proxy   192.168.1.50:16105  {
-    reverse_proxy   192.168.1.50:8096  {
-#        lb_policy   round_robin
+    reverse_proxy   192.168.1.50:16105 192.168.1.52:16105 192.168.1.53:16105   {
     }
 }
 
@@ -39,8 +37,9 @@ route /recipes* {
     }
 }
 
-route /caddy* {
-        uri strip_prefix /caddy
+# Caddy test-instance with default Caddy homepage
+route /caddy-test* {
+        uri strip_prefix /caddy-test
         reverse_proxy 192.168.1.50:16102 192.168.1.52:16102 192.168.1.53:16102
 }
 
