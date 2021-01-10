@@ -19,6 +19,11 @@ aasgaards.no
 # Another common task is to set up a reverse proxy:
 # reverse_proxy localhost:8080
 
+route /test* {
+    uri strip_prefix /test
+    reverse_proxy   192.168.1.50:8096
+}
+
 route /emby* {
 #    uri strip_prefix /emby
 #    reverse_proxy   192.168.1.50:16105  {
@@ -38,6 +43,12 @@ route /caddy* {
         uri strip_prefix /caddy
         reverse_proxy 192.168.1.50:16102 192.168.1.52:16102 192.168.1.53:16102
 }
+
+# The docker visualizer
+route /visualizer* {
+        reverse_proxy 192.168.1.50:16106 192.168.1.52:16106 192.168.1.53:16106 
+}
+
 
 # Or serve a PHP site through php-fpm:
 # php_fastcgi localhost:9000
