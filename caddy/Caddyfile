@@ -33,7 +33,7 @@ route /test* {
 # ownCloud
 #route /owncloud* {
 #    reverse_proxy   192.168.1.50:16108 192.168.1.52:16108 192.168.1.53:16108   {
-reverse_proxy  /owncloud/* 192.168.1.50:16108
+reverse_proxy  /owncloud* 192.168.1.50:16108/
 
 #   {
 #    lb_policy   header
