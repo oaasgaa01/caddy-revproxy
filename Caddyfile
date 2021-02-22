@@ -32,19 +32,19 @@ route /test* {
 #}
 
 # ownCloud
-route /owncloud* {
+#route /owncloud* {
 #    reverse_proxy   192.168.1.50:16108 192.168.1.52:16108 192.168.1.53:16108   {
-    reverse_proxy   192.168.1.50:16108   {
-    lb_policy   header
-    }
-}
+#    reverse_proxy   192.168.1.50:16108   {
+#    lb_policy   header
+#    }
+#}
 
-route /recipes* {
-    uri strip_prefix /recipes
-    reverse_proxy   192.168.1.50:16104 192.168.1.52:16104 192.168.1.53:16104 {
+#route /recipes* {
+#    uri strip_prefix /recipes
+#    reverse_proxy   192.168.1.50:16104 192.168.1.52:16104 192.168.1.53:16104 {
 #        lb_policy   round_robin
-    }
-}
+#    }
+#}
 
 # Caddy test-instance with default Caddy homepage
 route /caddy-test* {
