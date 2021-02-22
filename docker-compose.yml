@@ -11,8 +11,10 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - revproxy_data:/data
-      - revproxy_config:/config
+      - data:/data
+      - config:/config
+      - caddy:/etc/caddy
 volumes:
-  revproxy_data:
-  revproxy_config:
+  data:
+  config:
+  caddy:
