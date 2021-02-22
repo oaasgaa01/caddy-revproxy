@@ -25,11 +25,11 @@ route /test* {
 }
 
 # Emby media server
-#route /emby* {
-#    reverse_proxy   192.168.1.50:16105 192.168.1.52:16105 192.168.1.53:16105   {
-#    lb_policy   header
-#    }
-#}
+route /emby* {
+    reverse_proxy   192.168.1.50:16105 192.168.1.52:16105 192.168.1.53:16105   {
+    lb_policy   header
+    }
+}
 
 # ownCloud
 #route /owncloud* {
