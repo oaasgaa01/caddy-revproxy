@@ -13,6 +13,6 @@ aasgaards.no
 
 # Another common task is to set up a reverse proxy:
 # reverse_proxy localhost:8080
-# reverse_proxy 192.168.1.50:16106 192.168.1.52:16106 192.168.1.53:16106
 # reverse_proxy /visualizer* 192.168.1.50:16106 192.168.1.52:16106 192.168.1.53:16106
+reverse_proxy /owncloud* 192.168.1.50:16108
 
