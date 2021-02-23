@@ -21,4 +21,4 @@ aasgaards.no
 #    reverse_proxy   192.168.1.50:16108
 #}
 
-proxy / aasgaards.no/visualizer 192.168.1.5:16108 192.168.1.52:16106 192.168.1.53:16106 { policy round_robin health_check transparent }
+reverse_proxy / aasgaards.no/visualizer 192.168.1.5:16108 192.168.1.52:16106 192.168.1.53:16106 { policy round_robin health_check transparent }
