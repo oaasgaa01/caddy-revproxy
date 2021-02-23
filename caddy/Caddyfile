@@ -18,7 +18,7 @@ aasgaards.no
 # reverse_proxy /owncloud* 192.168.1.50:16108
 
 route /owncloud* {
-    uri strip_prefix /owncloud
+#    uri strip_prefix /owncloud
     reverse_proxy   192.168.1.50:16108
 }
 
