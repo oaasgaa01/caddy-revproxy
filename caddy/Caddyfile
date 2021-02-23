@@ -7,59 +7,12 @@
 # sure your domain's A/AAAA DNS records are properly pointed to
 # this machine's public IP, then replace the line below with your
 # domain name.
+# ---------------------------------------------------------------
 # :80
 aasgaards.no
 
-# Set this path to your site's directory.
-# root * /usr/share/caddy
-
-# Enable the static file server.
-# file_server
-
 # Another common task is to set up a reverse proxy:
 # reverse_proxy localhost:8080
+reverse_proxy 192.168.1.50:16106 192.168.1.52:16106 192.168.1.53:16106
+# reverse_proxy /visualizer* 192.168.1.50:16106 192.168.1.52:16106 192.168.1.53:16106
 
-route /test* {
-    uri strip_prefix /test
-    reverse_proxy   192.168.1.50:8096
-}
-
-# Emby media server
-#route /emby* {
-reverse_proxy /emby* 192.168.1.50:16105 192.168.1.52:16105 192.168.1.53:16105
-
-#    reverse_proxy /emby/* 192.168.1.50:16105 192.168.1.52:16105 192.168.1.53:16105 {
-#    lb_policy   ip_hash
-#}
-
-# ownCloud
-#route /owncloud* {
-#    reverse_proxy   192.168.1.50:16108 192.168.1.52:16108 192.168.1.53:16108   {
-reverse_proxy  /owncloud* 192.168.1.50:16108
-
-#   {
-#    lb_policy   header
-#    }
-#}
-
-#route /recipes* {
-#    uri strip_prefix /recipes
-#    reverse_proxy   192.168.1.50:16104 192.168.1.52:16104 192.168.1.53:16104 {
-#        lb_policy   round_robin
-#    }
-#}
-
-# Caddy test-instance with default Caddy homepage
-route /caddy-test* {
-        uri strip_prefix /caddy-test
-        reverse_proxy 192.168.1.50:16102 192.168.1.52:16102 192.168.1.53:16102
-}
-
-# The docker visualizer
-reverse_proxy /visualizer* 192.168.1.50:16106 192.168.1.52:16106 192.168.1.53:16106
-
-# Or serve a PHP site through php-fpm:
-# php_fastcgi localhost:9000
-
-# Refer to the Caddy docs for more information:
-# https://caddyserver.com/docs/caddyfile
